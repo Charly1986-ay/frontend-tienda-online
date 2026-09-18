@@ -10,9 +10,9 @@ export const ArticleCard = ({ article, onAddToCart }: ArticleCardProps) => {
   return (
     <div className='product-card'>
       <Link to={`/products/${article.slug}`}>
-        {article.imageURL ? (
+        {article.image_url ? (
           <img
-            src={article.imageURL}
+            src={article.image_url}
             alt={article.title}
             className='product-card-image'
           />

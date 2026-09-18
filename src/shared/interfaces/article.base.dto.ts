@@ -6,7 +6,7 @@ export interface IArticleCard {
   slug: string;
   stock: number; // entero
   price: string; // decimal
-  imageURL: string;
+  image_url: string;
 }
 
 export interface IArticleBase {
@@ -15,6 +15,6 @@ export interface IArticleBase {
   detail: string | null;
   stock: number;  
   price: string;  
-  unitsType: UnitsType;
-  imageURL: string | null;
+  units_type: UnitsType;
+  image_url: string | null;
 }

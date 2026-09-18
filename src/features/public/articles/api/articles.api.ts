@@ -15,9 +15,25 @@ export const getAllArticles = async (params: IArticleQueryParams): Promise<IArti
         sort_by: params.sortBy,
         sort_order: params.sortOrder,
       }
-    })
+    });
 
-    return response.data;
+    const data = response.data;
+
+    // Transformamos las URLs de las imágenes de cada artículo asegurando la barra intermedia
+    const IMAGE_URL = import.meta.env.VITE_IMAGE_URL || '';
+
+    const formattedArticles = data.articles.map((article) => ({
+      ...article,
+      image_url: article.image_url
+        ? `${IMAGE_URL}/${article.image_url}`
+        : `${IMAGE_URL}/not-photo_512.png`,
+    }));
+
+    return {
+      ...data,
+      articles: formattedArticles,
+    };
+
   } catch (error) {
     return {
       counter: 0,
@@ -28,4 +44,4 @@ export const getAllArticles = async (params: IArticleQueryParams): Promise<IArti
       articles: []
     };
   }
-}
+};
