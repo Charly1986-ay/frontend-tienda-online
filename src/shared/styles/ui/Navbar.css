@@ -60,6 +60,10 @@ nav.navbar-main a.navbar-brand:hover {
   font-size: 0.85rem;
 }
 
+.icon-spacing {
+  margin-right: 0.5rem; 
+}
+
 /* Responsivo para pantallas pequeñas */
 @media (max-width: 768px) {
   .navbar-main {

@@ -1,6 +1,6 @@
 export interface IItemBase {
-  articleId: number;
+  article_id: number;
   title: string;
   units: number; // Entero
-  price: number; // Decimal
+  price: string; // Decimal
 }

@@ -6,6 +6,7 @@ export interface AnnouncementItem {
   id: string | number;
   text: string;
   to: string;
+  icon?: string;
 }
 
 // Definimos las props que recibirá el componente completo
@@ -14,12 +15,16 @@ interface AnnouncementBarProps {
   items: AnnouncementItem[];
 }
 
-export const AnnouncementBar = ({ title = '⚡ Ofertas de Temporada', items }: AnnouncementBarProps) => {
+export const AnnouncementBar = ({ title = 'Ofertas de Temporada', items }: AnnouncementBarProps) => {
   return (
     <nav className='announcement-bar'>
-      <span>{title}</span>
+      <span className='announcement-title'>        
+        <i className='fa-solid fa-bolt icon-spacing text-accent'></i>
+        {title}
+      </span>
       {items.map((item) => (
-        <Link key={item.id} to={item.to}>
+        <Link key={item.id} to={item.to} className="announcement-link">
+          {item.icon && <i className={`${item.icon} icon-spacing`}></i>}
           {item.text}
         </Link>
       ))}
