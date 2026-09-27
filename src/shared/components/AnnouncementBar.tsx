@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import '../styles/components/AnnouncementBar.css';
 
 // Definimos la estructura de cada anuncio individual
 export interface AnnouncementItem {
@@ -9,13 +10,13 @@ export interface AnnouncementItem {
 
 // Definimos las props que recibirá el componente completo
 interface AnnouncementBarProps {
-  title?: string; // Opcional, por si quieres cambiar el texto "⚡ Ofertas de Temporada"
+  title?: string; // Opcional, por si quieres cambiar el texto '⚡ Ofertas de Temporada'
   items: AnnouncementItem[];
 }
 
-export const AnnouncementBar = ({ title = "⚡ Ofertas de Temporada", items }: AnnouncementBarProps) => {
+export const AnnouncementBar = ({ title = '⚡ Ofertas de Temporada', items }: AnnouncementBarProps) => {
   return (
-    <nav className="announcement-bar">
+    <nav className='announcement-bar'>
       <span>{title}</span>
       {items.map((item) => (
         <Link key={item.id} to={item.to}>

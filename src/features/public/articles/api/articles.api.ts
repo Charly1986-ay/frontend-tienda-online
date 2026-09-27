@@ -1,9 +1,12 @@
 import { api } from '../../../../shared/api/api';
 import type { IArticleQueryParams } from '../../../../shared/interfaces/article.query.params';
-import type { IArticlePaginationPublic } from '../interfaces/articles.dto';
+import type { IArticlePaginationPublic, IArticlePublic } from '../interfaces/articles.dto';
+import { getImageURL } from '../../../../shared/utils/getImageURL';
 
 
-export const getAllArticles = async (params: IArticleQueryParams): Promise<IArticlePaginationPublic> => {
+export const getAllArticles = async (
+  params: IArticleQueryParams
+): Promise<IArticlePaginationPublic> => {
   try {
     const response = await api<IArticlePaginationPublic>('/public/articles/all', {
       params: {
@@ -19,14 +22,9 @@ export const getAllArticles = async (params: IArticleQueryParams): Promise<IArti
 
     const data = response.data;
 
-    // Transformamos las URLs de las imágenes de cada artículo asegurando la barra intermedia
-    const IMAGE_URL = import.meta.env.VITE_IMAGE_URL || '';
-
     const formattedArticles = data.articles.map((article) => ({
       ...article,
-      image_url: article.image_url
-        ? `${IMAGE_URL}/${article.image_url}`
-        : `${IMAGE_URL}/not-photo_512.png`,
+      image_url: getImageURL(article.image_url)
     }));
 
     return {
@@ -44,4 +42,19 @@ export const getAllArticles = async (params: IArticleQueryParams): Promise<IArti
       articles: []
     };
   }
+}
+
+export const getArticleBySlug = async (
+  slug: string
+): Promise<IArticlePublic> => {
+  const response = await api<IArticlePublic>(
+    `/public/articles/${slug}`
+  );
+
+  const data = response.data;
+
+  return {
+    ...data,
+    image_url: getImageURL(data.image_url),
+  };
 };

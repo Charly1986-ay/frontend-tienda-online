@@ -39,6 +39,9 @@
   --btn-primary-bg: var(--color-amber);
   --btn-primary-text: var(--color-dark);
 
+  --btn-secundary-bg: var(--color-midnight);
+  --btn-secundary-text: var(--color-ivory);
+
   --footer-bg: var(--color-midnight);
   --footer-text: var(--color-ivory);
 

@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Ignorar dependencias de iconos de terceros
+src/shared/styles/vendors/

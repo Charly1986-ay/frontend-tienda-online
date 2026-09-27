@@ -1,42 +1,39 @@
 import { Link } from 'react-router-dom';
-import type { IArticleCard } from '../../../../shared/interfaces/article.base.dto'
+import '../styles/ArticleCard.css';
 
 interface ArticleCardProps {
-  article: IArticleCard;
-  onAddToCart: (id: number) => void;
+  id: number;
+  title: string;  
+  slug: string;
+  stock: number; // entero
+  price: string; // decimal
+  image_url: string;  
 }
 
-export const ArticleCard = ({ article, onAddToCart }: ArticleCardProps) => {
+export const ArticleCard = (article: ArticleCardProps) => {
   return (
     <div className='product-card'>
-      <Link to={`/products/${article.slug}`}>
+      <Link to={`/products/${article.slug}`} className='product-card__link'>
         {article.image_url ? (
           <img
-            src={article.image_url}
+            src={article.image_url ?? 'not-photo_512.png'}
             alt={article.title}
-            className='product-card-image'
+            className='product-card__image'
           />
         ) : (
-          <div className='product-card-image-placeholder'>
+          <div className='product-card__image-placeholder'>
             {article.title}
           </div>
         )}
       </Link>
 
-      <h4 className='product-card-title'>
+      <h4 className='product-card__title'>
         {article.title}
       </h4>
 
-      <div className='product-card-price'>
+      <div className='product-card__price'>
         ${article.price}
       </div>
-
-      <button
-        className='btn-primary'
-        onClick={() => onAddToCart(article.id)}
-      >
-        Añadir al carrito
-      </button>
     </div>
-  )
-}
+  );
+};

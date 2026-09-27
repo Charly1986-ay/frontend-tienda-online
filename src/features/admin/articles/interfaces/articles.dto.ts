@@ -4,8 +4,8 @@ import type { StatusArticle } from '../types/articles.enums';
 
 export interface IArticleCreate extends IArticleBase {  
   cost: number;
-  brandId: number;
-  categoryId: number;
+  brand_id: number;
+  category_id: number;
 }
 
 export interface IArticleUpdate {
@@ -25,11 +25,11 @@ export interface IUpdateArticlePrice {
 }
 
 export interface IUpdateArticleBrand {
-  brandId: number;
+  brand_id: number;
 }
 
 export interface IUpdateArticleCategory {
-  categoryId: number;
+  category_id: number;
 }
 
 export interface IArticleStatus{
@@ -39,8 +39,8 @@ export interface IArticleStatus{
 export interface IArticleResponse extends IArticleBase {
   id: number; // Campo exclusivo de la respuesta
   cost: number;
-  brand: string;
-  category: string;
+  category_name?: string | null;
+  brand_name?: string | null;
   status: StatusArticle;
 }
 

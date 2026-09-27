@@ -1,4 +1,7 @@
 import { AnnouncementBar, type AnnouncementItem } from './AnnouncementBar'
+import '../styles/components/Header.css';
+import { Navbar } from './Navbar';
+
 
 export const Header = () => {
   // Estos datos podrían venir perfectamente de una base de datos o un JSON en el futuro
@@ -11,13 +14,7 @@ export const Header = () => {
   return (
     <header>
       {/* Navbar Principal */}
-      <nav className='navbar-main'>
-        <div className='navbar-brand'>Curated Store</div>
-        <div className='search-box'>
-          <input type='text' placeholder='Buscar tecnología, herramientas...' />
-          <span style={{ color: 'var(--color-charcoal)', fontSize: '0.85rem' }}>🔍</span>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Sub-barra de Anuncios */}
       <AnnouncementBar items={ promotions }/>

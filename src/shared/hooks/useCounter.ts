@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const useCounter = ({ init = 1, maxQuantity, minQuantity = 1 }: Props) => {
-  const [counter, setCounter] = useState(init);
+  const [counter, setCounter] = useState<number>(init);
 
   const handleAdd = () => {
     setCounter(

@@ -14,7 +14,7 @@ export const appRouter = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: 'articles/:idSlug',
+        path: 'products/:idSlug',
         element: <ArticleViewPage />,
       },
       {
