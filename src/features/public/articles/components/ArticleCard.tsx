@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import '../styles/ArticleCard.css';
+import '@/features/public/articles/styles/ArticleCard.css';
 
 interface ArticleCardProps {
   id: number;
@@ -7,16 +7,16 @@ interface ArticleCardProps {
   slug: string;
   stock: number; // entero
   price: string; // decimal
-  image_url: string;  
+  image: string;  
 }
 
 export const ArticleCard = (article: ArticleCardProps) => {
   return (
     <div className='product-card'>
       <Link to={`/products/${article.slug}`} className='product-card__link'>
-        {article.image_url ? (
+        {article.image ? (
           <img
-            src={article.image_url ?? 'not-photo_512.png'}
+            src={article.image ?? 'not-photo_512.png'}
             alt={article.title}
             className='product-card__image'
           />

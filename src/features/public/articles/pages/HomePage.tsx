@@ -1,9 +1,9 @@
 import { useSearchParams } from "react-router-dom";
-import type { IArticleQueryParams } from "../../../../shared/interfaces/article.query.params";
-import { usePaginatedArticles } from "../hooks/usePaginatedArticles";
-import { Paginator } from "../../../../shared/components/Paginator";
-import { parsePositiveInt } from "../../../../shared/utils/parsers";
-import ArticleGrid from "../components/ArticleGrid";
+import type { IArticleQueryParams } from "@/shared/interfaces/article.query.params";
+import { usePaginatedArticles } from "@/features/public/articles/hooks/usePaginatedArticles";
+import { CustomPaginator } from "@/shared/components/CustomPaginator";
+import { parsePositiveInt } from "@/shared/utils/parsers";
+import ArticleGrid from "@/features/public/articles/components/ArticleGrid";
 
 export const HomePage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -12,7 +12,7 @@ export const HomePage = () => {
   const queryParams: IArticleQueryParams = {
     pageSize: Number(searchParams.get('pageSize') || 6),
     page: parsePositiveInt(searchParams.get('page'), 1),
-    //title: searchParams.get('title') || undefined,
+    title: searchParams.get('title') || undefined,
     //category: searchParams.get('category') || undefined,
     //brands: searchParams.get('brands') || undefined,
   }
@@ -37,7 +37,7 @@ export const HomePage = () => {
       <ArticleGrid articles={ data?.articles ?? [] } />
 
       {/* Controles simples de paginación */}
-      <Paginator page={data?.page ?? 1} pages={data?.pages ?? 1} onPageChange={handlePageChange} />    
+      <CustomPaginator page={data?.page ?? 1} pages={data?.pages ?? 1} onPageChange={handlePageChange} />    
     </div>
   );
 }

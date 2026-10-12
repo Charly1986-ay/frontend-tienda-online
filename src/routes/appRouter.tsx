@@ -1,8 +1,18 @@
+import { lazy } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 
-import { HomePage } from "../features/public/articles/pages/HomePage";
-import { ArticleViewPage } from "../features/public/articles/pages/ArticleViewPage";
-import { PublicLayout } from "../shared/layouts/PublicLayout";
+import { PublicLayout } from "@/features/public/layout/PublicLayout";
+
+const AuthLayout = lazy(() => import('@/features/auth/layout/AuthLayout'));
+const AdminLayout = lazy(() => import('@/features/admin/layout/AdminLayout'));
+
+import { HomePage } from "@/features/public/articles/pages/HomePage";
+
+import { ArticleViewPage } from "@/features/public/article/pages/ArticleViewPage";
+
+import { LoginPage } from "@/features/auth/pages/LoginPage";
+import { RegisterPage } from "@/features/auth/pages/RegisterPage";
+
 
 export const appRouter = createBrowserRouter([
   {
@@ -17,11 +27,35 @@ export const appRouter = createBrowserRouter([
         path: 'products/:idSlug',
         element: <ArticleViewPage />,
       },
+    ]
+  },
+
+  {
+    path: '/auth',
+    element: <AuthLayout />,
+    children: [
       {
-        path: '*',
-        //element: <h1>404</h1>,
-        element: <Navigate to='/' />
+        index: true,
+        element: <Navigate to='/auth/login' />
+      },
+      {
+        path: 'login',
+        element: <LoginPage />
+      },
+      {
+        path: 'register',
+        element: <RegisterPage />
       },
     ]
   },
+
+  {
+    path: '/admin',
+    element: <AdminLayout />,
+  },
+
+  {
+    path: '*',
+    element: <Navigate to='/' />
+  }
 ]);

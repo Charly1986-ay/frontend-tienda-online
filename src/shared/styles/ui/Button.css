@@ -20,8 +20,8 @@
 
 /* Variante Primaria (Para llamadas a la acción principales o destacadas) */
 .btn--primary {
-  background-color: var(--btn-secundary-bg);
-  color: var(--btn-secundary-text);
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
 }
 
 .btn--primary:hover {
@@ -32,8 +32,8 @@
 
 /* Variante Secundaria */
 .btn--secondary {
-  background-color: var(--btn-secundary-bg, var(--color-midnight));
-  color: var(--btn-secundary-text, var(--color-ivory));
+  background-color: var(--btn-secundary-bg);
+  color: var(--btn-secundary-text);
 }
 
 .btn--secondary:hover {

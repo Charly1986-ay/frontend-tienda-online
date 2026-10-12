@@ -1,7 +1,7 @@
-import '../styles/ArticleViewDetail.css';
-import type { IArticlePublic } from '../interfaces/articles.dto';
-import { useCounter } from '../../../../shared/hooks/useCounter';
-import type { IItemBase } from '../../../../shared/interfaces/item.base.dto';
+import type { IArticlePublic } from '@/features/public/articles/interfaces/articles.dto';
+import { useCounter } from '@/shared/hooks/useCounter';
+import type { IItemBase } from '@/shared/interfaces/item.base.dto';
+import '@/features/public/article/styles/ArticleViewDetail.css';
 
 
 interface Props {
@@ -22,7 +22,7 @@ export const ArticleViewDetail = ({ article, onAddToCart }: Props) => {
 
       <div className="product-detail__image-container">
         <img
-          src={article.image_url ?? 'not-photo_512.png'}
+          src={article.image ?? 'not-photo_512.png'}
           alt={article.title}
         />
       </div>

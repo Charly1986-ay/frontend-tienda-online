@@ -1,4 +1,4 @@
-import type { UserStatus } from "../../../../shared/types/users.enums";
+import type { UserStatus } from "@/shared/types/users.type";
 
 export interface IUserPublic {  
   id: number;  

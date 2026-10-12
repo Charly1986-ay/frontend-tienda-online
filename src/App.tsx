@@ -1,4 +1,4 @@
-import { appRouter } from "./routes/appRouter";
+import { appRouter } from "@/routes/appRouter";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider } from "react-router-dom";

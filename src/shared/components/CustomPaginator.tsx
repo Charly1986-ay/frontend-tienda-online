@@ -1,5 +1,5 @@
-import '../styles/components/Paginator.css';
-import { Button } from '../ui/Button';
+import '@/shared/styles/components/custom-paginator.css';
+import { Button } from '@/shared/ui/Button';
 
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
   onPageChange: (page: number) => void;
 }
 
-export const Paginator = ({ page, pages, onPageChange }: Props) => {
+export const CustomPaginator = ({ page, pages, onPageChange }: Props) => {
   return (
     <div className='pagination'>      
       <Button

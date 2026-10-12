@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import { getAllArticles } from '../api/articles.api';
-import type { IArticleQueryParams } from '../../../../shared/interfaces/article.query.params';
+import { getAllArticles } from '@/features/public/articles/actions/get-articles.action';
+import type { IArticleQueryParams } from '@/shared/interfaces/article.query.params';
 
 export const useArticles = (params: IArticleQueryParams) => {
   return useQuery({    

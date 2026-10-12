@@ -16,7 +16,7 @@
   --color-success: #6B8E73;
   --color-warning: #C4925C;
   --color-error: #B36666;
-  --color-info: #708A9E;
+  --color-info: #708A9E;  
 
   /* 🧩 Semantic Tokens */
   --bg-main: var(--color-ivory);
@@ -36,11 +36,11 @@
   --sidebar-text: var(--color-charcoal);
   --sidebar-active: var(--color-midnight);
 
-  --btn-primary-bg: var(--color-amber);
-  --btn-primary-text: var(--color-dark);
+  --btn-primary-bg: var(--color-midnight);
+  --btn-primary-text: var(--color-ivory);
 
-  --btn-secundary-bg: var(--color-midnight);
-  --btn-secundary-text: var(--color-ivory);
+  --btn-secundary-bg: var(--color-amber);
+  --btn-secundary-text: var(--color-dark);
 
   --footer-bg: var(--color-midnight);
   --footer-text: var(--color-ivory);

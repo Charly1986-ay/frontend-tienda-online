@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 import { useParams } from "react-router-dom";
-import { useArticleBySlug } from "../hooks/useArticleBySlug";
-import { ArticleViewDetail } from "../components/ArticleViewDetail";
-import { useCart } from "../../../../shared/hooks/useCart";
-import { ToastNotification } from "../../../../shared/components/ToastNotification";
-import type { IItemBase } from "../../../../shared/interfaces/item.base.dto";
+import { useArticleBySlug } from "@/features/public/article/hooks/useArticleBySlug";
+import { ArticleViewDetail } from "@/features/public/article/components/ArticleViewDetail";
+import { useCart } from "@/shared/hooks/useCart";
+import { ToastNotification } from "@/shared/components/ToastNotification";
+import type { IItemBase } from "@/shared/interfaces/item.base.dto";
 
 export const ArticleViewPage = () => {
   const { idSlug } = useParams(); 

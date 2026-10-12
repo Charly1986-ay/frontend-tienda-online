@@ -1,4 +1,4 @@
-import '../styles/components/ToastNotification.css';
+import '@/shared/styles/components/toast-notification.css';
 
 type NotificationType = 'success' | 'warning' | 'error' | 'info';
 

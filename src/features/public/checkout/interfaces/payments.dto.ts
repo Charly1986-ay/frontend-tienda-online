@@ -1,4 +1,4 @@
-import type { Currency } from "../../../../shared/types/payments.enums";
+import type { Currency } from "@/shared/types/payments.type";
 
 
 interface IPaymentBase {

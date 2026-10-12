@@ -1,6 +1,6 @@
-import '../styles/components/Footer.css';
+import '@/features/public/styles/CustomerFooter.css';
 
-export const Footer = () => {
+export const CustomerFooter = () => {
   const anioActual = new Date().getFullYear();
 
   return (

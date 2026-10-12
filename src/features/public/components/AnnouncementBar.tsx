@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import '../styles/components/AnnouncementBar.css';
+import '@/features/public/styles/AnnouncementBar.css';
 
 // Definimos la estructura de cada anuncio individual
 export interface AnnouncementItem {

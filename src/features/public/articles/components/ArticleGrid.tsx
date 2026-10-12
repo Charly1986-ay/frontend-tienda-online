@@ -1,6 +1,6 @@
-import { ArticleCard } from '../components/ArticleCard';
-import type { IArticlePublic } from '../interfaces/articles.dto';
-import '../styles/ArticleGrid.css';
+import { ArticleCard } from '@/features/public/articles/components/ArticleCard';
+import type { IArticlePublic } from '@/features/public/articles/interfaces/articles.dto';
+import '@/features/public/articles/styles/ArticleGrid.css';
 
 interface ArticleGridProps {
   articles: IArticlePublic[];
@@ -17,7 +17,7 @@ const ArticleGrid = ({ articles }: ArticleGridProps) => {
           slug={ article.slug }
           stock={ article.stock }
           price={ article.price }
-          image_url={ article.image_url ?? 'not-photo_512.png' }         
+          image={ article.image ?? 'not-photo_512.png' }         
         />
       ))}
     </div>

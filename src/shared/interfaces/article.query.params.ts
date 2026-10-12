@@ -1,4 +1,4 @@
-import type { ArticleSortField } from "../types/articles.enums";
+import type { ArticleSortField } from "@/shared/types/articles-sort.type";
 
 export interface IArticleQueryParams {
   pageSize?: number;

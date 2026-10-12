@@ -1,4 +1,4 @@
-import type { Role } from "../../../shared/types/users.enums";
+import type { Role } from "@/shared/types/users.type";
 
 export interface UserLogin {
   email: string;  

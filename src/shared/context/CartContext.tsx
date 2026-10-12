@@ -1,5 +1,5 @@
 import { createContext, useState, type FC, type PropsWithChildren } from "react";
-import type { IItemBase } from "../interfaces/item.base.dto";
+import type { IItemBase } from "@/shared/interfaces/item.base.dto";
 
 interface CartContextProps {
   items: IItemBase[];

@@ -1,9 +1,9 @@
 import { AnnouncementBar, type AnnouncementItem } from './AnnouncementBar'
-import '../styles/components/Header.css';
-import { Navbar } from './Navbar';
+import { Navbar } from '@/features/public/components/Navbar';
+import '@/features/public/styles/CustomerHeader.css';
 
 
-export const Header = () => {
+export const CustomerHeader = () => {
   // Estos datos podrían venir perfectamente de una base de datos o un JSON en el futuro
   const promotions: AnnouncementItem[] = [
   { 

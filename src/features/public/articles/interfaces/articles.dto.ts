@@ -1,6 +1,6 @@
 import type { 
   IArticleBase 
-} from '../../../../shared/interfaces/article.base.dto';
+} from '@/shared/interfaces/article.base.dto';
 
 
 export interface IArticlePublic extends IArticleBase {

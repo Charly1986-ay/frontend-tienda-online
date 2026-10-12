@@ -1,19 +1,19 @@
 import { Outlet } from 'react-router-dom';
-import { Header } from '../components/Header';
-import { Footer } from '../components/Footer';
-import { CartProvider } from '../context/CartContext';
+import { CustomerHeader } from '@/features/public/components/CustomerHeader';
+import { CustomerFooter } from '@/features/public/components/CustomerFooter';
+import { CartProvider } from '@/shared/context/CartContext';
 
 export const PublicLayout = () => {
   return (
     <CartProvider>
       <div className='layout-container'>
-        <Header />
+        <CustomerHeader />
         
         <main className='main-content'>
           <Outlet />
         </main>
 
-        <Footer />
+        <CustomerFooter />
       </div>
     </CartProvider>
   );

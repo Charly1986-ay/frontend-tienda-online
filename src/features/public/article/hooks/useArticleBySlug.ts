@@ -1,5 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import { getArticleBySlug } from '../api/articles.api';
+
+import { 
+  getArticleBySlug 
+} from '@/features/public/article/actions/get-article-slug.action';
 
 export const useArticleBySlug = (slug?: string) => {
   return useQuery({

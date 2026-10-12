@@ -1,7 +1,7 @@
-import type { IItemBase } from "../../../../shared/interfaces/item.base.dto";
-import type { ICardStripe } from "./payments.dto";
-import type { IItemPublic } from "./items.dto";
-import type { InvoiceStatus } from "../../../../shared/types/invoice.status.enums";
+import type { IItemBase } from "@/shared/interfaces/item.base.dto";
+import type { ICardStripe } from "@/features/public/checkout/interfaces/payments.dto";
+import type { IItemPublic } from "@/features/public/checkout/interfaces/items.dto";
+import type { InvoiceStatus } from "@/shared/types/invoice.status.type";
 
 interface IInvoiceBase {
   items: IItemBase[];

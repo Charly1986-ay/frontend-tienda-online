@@ -1,11 +1,12 @@
-import { Link } from 'react-router-dom';
-import { Button } from '../ui/Button';
-import '../styles/ui/Navbar.css';
-import { useCart } from '../hooks/useCart';
+import { Link, useNavigate } from 'react-router-dom';
+import { Button } from '@/shared/ui/Button';
+import '@/features/public/styles/Navbar.css';
+import { useCart } from '@/shared/hooks/useCart';
 
 
 export const Navbar = () => {
   const { counter } = useCart();
+  const navigate = useNavigate();
 
   return (
     <nav className='navbar-main'>
@@ -28,17 +29,12 @@ export const Navbar = () => {
           {counter > 0 && <span className='cart-badge'>{counter}</span>}
         </Button>
 
-        <Button
-          variant='outline'
-          onClick={() => console.log('Login')}
-        >
+        {/* Opción 1: Navegar en el onClick del Button sin <Link> exterior */}
+        <Button variant='outline' onClick={() => navigate('/auth/login')}>
           <i className='fa-solid fa-user'></i> Iniciar sesión
         </Button>
 
-        <Button
-          variant='outline'
-          onClick={() => console.log('Register')}
-        >
+        <Button variant='outline' onClick={() => navigate('/auth/register')}>
           <i className='fa-solid fa-user-plus'></i> Crear cuenta
         </Button>
       </div>

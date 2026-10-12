@@ -1,4 +1,4 @@
-import type { InvoiceStatus } from "../../../../shared/types/invoice.status.enums";
+import type { InvoiceStatus } from "@/shared/types/invoice.status.type";
 
 export interface IUpdateInvoiceStatus {
   status: InvoiceStatus;

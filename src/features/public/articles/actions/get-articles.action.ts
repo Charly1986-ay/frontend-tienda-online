@@ -1,7 +1,13 @@
-import { api } from '../../../../shared/api/api';
-import type { IArticleQueryParams } from '../../../../shared/interfaces/article.query.params';
-import type { IArticlePaginationPublic, IArticlePublic } from '../interfaces/articles.dto';
-import { getImageURL } from '../../../../shared/utils/getImageURL';
+import { api } from '@/shared/api/api';
+
+import type { 
+  IArticleQueryParams 
+} from '@/shared/interfaces/article.query.params';
+
+import type { 
+  IArticlePaginationPublic 
+} from '@/features/public/articles/interfaces/articles.dto';
+import { getImageURL } from '@/shared/utils/getImageURL';
 
 
 export const getAllArticles = async (
@@ -24,7 +30,7 @@ export const getAllArticles = async (
 
     const formattedArticles = data.articles.map((article) => ({
       ...article,
-      image_url: getImageURL(article.image_url)
+      image_url: getImageURL(article.image)
     }));
 
     return {
@@ -43,18 +49,3 @@ export const getAllArticles = async (
     };
   }
 }
-
-export const getArticleBySlug = async (
-  slug: string
-): Promise<IArticlePublic> => {
-  const response = await api<IArticlePublic>(
-    `/public/articles/${slug}`
-  );
-
-  const data = response.data;
-
-  return {
-    ...data,
-    image_url: getImageURL(data.image_url),
-  };
-};

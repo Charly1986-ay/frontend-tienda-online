@@ -1,4 +1,8 @@
-import type { UnitsType } from '../types/articles.enums';
+export type UnitsType =
+  | 'units'
+  | 'liter'
+  | 'gram'
+  | 'metro';
 
 export interface IArticleBase {
   title: string;
@@ -7,5 +11,5 @@ export interface IArticleBase {
   stock: number;  
   price: string;  
   units_type: UnitsType;
-  image_url: string | null;
+  image: string | null;
 }
