@@ -1,8 +1,6 @@
-import type { UserStatus } from "@/shared/types/users.type";
+import type { IUserCreate } from "@/shared/interfaces/user.base.dto";
+import type { Role } from "@/shared/types/users.type";
 
-export interface IUserPublic {  
-  id: number;  
-  email: string;
-  fullName: string;
-  status: UserStatus;
+export interface AdminUserCreate extends IUserCreate {
+  role: Role   
 }

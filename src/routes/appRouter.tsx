@@ -1,14 +1,14 @@
 import { lazy } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 
-import { PublicLayout } from "@/features/public/layout/PublicLayout";
+import { PublicLayout } from "@/features/store/layout/PublicLayout";
 
 const AuthLayout = lazy(() => import('@/features/auth/layout/AuthLayout'));
 const AdminLayout = lazy(() => import('@/features/admin/layout/AdminLayout'));
 
-import { HomePage } from "@/features/public/articles/pages/HomePage";
+import { HomePage } from "@/features/store/articles/pages/HomePage";
 
-import { ArticleViewPage } from "@/features/public/article/pages/ArticleViewPage";
+import { ArticleViewPage } from "@/features/store/article/pages/ArticleViewPage";
 
 import { LoginPage } from "@/features/auth/pages/LoginPage";
 import { RegisterPage } from "@/features/auth/pages/RegisterPage";

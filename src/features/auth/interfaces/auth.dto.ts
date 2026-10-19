@@ -1,17 +1,12 @@
-import type { Role } from "@/shared/types/users.type";
+import type { IUserResponse } from "@/shared/interfaces/user.base.dto";
 
-export interface UserLogin {
+export interface IUserLogin {
   email: string;  
   password: string;  
 }
 
-export interface UserPublic {
-  email: string;
-  fullName: string;
-  role: Role;  
-}
-
-export interface TokenResponse {
-  access_token: string;  
-  token_type: 'bearer';
+// Login, Register, CheckStatus
+export interface IAuthResponse {
+  user:  IUserResponse;
+  token: string;
 }
